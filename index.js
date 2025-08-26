@@ -80,3 +80,12 @@ for(const callBtn of CallBtns){
 
 
 
+// clear button event listener
+document.getElementById('clear-btn')
+    .addEventListener('click', function(){
+            
+        document.getElementById('aside-container').innerText = '';
+    });
+
+
+
