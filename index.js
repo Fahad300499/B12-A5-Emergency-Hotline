@@ -12,3 +12,26 @@ for(const heart of hearts){
     })
 }
 
+
+
+//copy button event listener
+const copys = document.getElementsByClassName('copy-btn');
+for(const copy of copys){
+    
+    copy.addEventListener('click', function(){
+        const countOfCopy = document.getElementById('copy').innerText;
+        
+        
+    const countCopyResult = Number(countOfCopy) + 1;
+    document.getElementById('copy').innerText = countCopyResult;
+
+    alert('copied your text');
+
+    const callText = copy.parentNode.parentNode.children[3].innerText;
+    navigator.clipboard.writeText(callText)
+    console.log(callText);
+
+    })
+}
+
+
