@@ -35,3 +35,48 @@ for(const copy of copys){
 }
 
 
+
+
+// call button event listener
+const CallBtns = document.getElementsByClassName('call-btn');
+for(const callBtn of CallBtns){
+
+    callBtn.addEventListener('click', function(){
+        const coinBalance = document.getElementById('coin-balance').innerText;
+        if(coinBalance > 0){
+            alert('you are call with National Emergency Number');
+             const balance = Number(coinBalance) -20; 
+             document.getElementById('coin-balance').innerText = balance;
+
+        const instituation = callBtn.parentNode.parentNode.children[1].innerText;
+        const instituationNum = callBtn.parentNode.parentNode.children[3].innerText;
+        
+
+            const asideContainer = document.getElementById('aside-container');
+            const newDiv = document.createElement('div');
+            const timeReal = new Date().toLocaleTimeString();
+           
+           
+
+            newDiv.innerHTML=  `
+                <div class="flex justify-between items-center bg-gray-100 p-3 rounded-xl mt-3">
+                     <div>
+                        <p class="font-bold">${instituation}</p>
+                        <p>${instituationNum}</p>
+                     </div>
+                     <h1>${timeReal}</h1>
+                </div>
+            `
+
+            asideContainer.appendChild(newDiv);
+
+        }
+        else{
+            alert('আপনার কাছে ব্যালেন্স নেই । নূন্যতাম ২০ টাকা লাগবে কল করার জন্য ');
+
+        }
+    })
+}
+
+
+
