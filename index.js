@@ -44,13 +44,15 @@ for(const callBtn of CallBtns){
     callBtn.addEventListener('click', function(){
         const coinBalance = document.getElementById('coin-balance').innerText;
         if(coinBalance > 0){
-            alert('you are call with National Emergency Number');
+            
+
              const balance = Number(coinBalance) -20; 
              document.getElementById('coin-balance').innerText = balance;
 
         const instituation = callBtn.parentNode.parentNode.children[1].innerText;
         const instituationNum = callBtn.parentNode.parentNode.children[3].innerText;
         
+        alert( '📞Calling '  + instituation + ': ' + instituationNum + ' ....');
 
             const asideContainer = document.getElementById('aside-container');
             const newDiv = document.createElement('div');
