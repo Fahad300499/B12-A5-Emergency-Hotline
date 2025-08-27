@@ -1,5 +1,7 @@
 
 
+
+
 // heart button event listener
 const hearts = document.getElementsByClassName('heart-btn');
 for(const heart of hearts){
@@ -24,12 +26,15 @@ for(const copy of copys){
         
     const countCopyResult = Number(countOfCopy) + 1;
     document.getElementById('copy').innerText = countCopyResult;
+    
 
-    alert('copied your text');
+
 
     const callText = copy.parentNode.parentNode.children[3].innerText;
     navigator.clipboard.writeText(callText)
-    console.log(callText);
+
+    alert('copied  your number: ' + callText);
+    
 
     })
 }
@@ -74,7 +79,7 @@ for(const callBtn of CallBtns){
 
         }
         else{
-            alert('আপনার কাছে ব্যালেন্স নেই । নূন্যতাম ২০ টাকা লাগবে কল করার জন্য ');
+            alert('❌ You dont have enough coins. You need at least 20 coins to make a call.');
 
         }
     })
