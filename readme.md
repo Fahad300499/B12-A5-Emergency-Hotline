@@ -8,8 +8,9 @@ Above I have an HTML p tag, in which I was able to get an ID using document.getE
 getElementsByClassName:-  This method can retrieve all elements based on a specific class name. It returns an HTML Collection. Although it looks like an array, it is an array like object. 
 In this method, if we add or remove new elements in an HTML, it is automatically updated. We use it when we need all elements of a particular class.
 For example:
-// HTML: <h2 class=”heading”>This is my heading1</h2> 
-	<h3 class="heading ">This is my heading2</h3>
+ HTML: 
+<!--  <h2 class="heading">This is my heading1</h2>   -->
+<!--  <h3 class="heading">This is my heading2</h3>  -->
 
 const myHeading= document.getElementsByClassName('heading');
 Above I have 2 HTML tags, through which I was able to capture both of them with a single class using document.getElementsBClassName.
@@ -24,9 +25,9 @@ querySelectoAll():-  Like querySelector(), it also uses CSS selectors. However, 
 If the querySelectorAll has an ID like CSS, it needs to be preceded by a hash tag and if it has a class, it needs to be preceded by a dot.
 
 HTML: 
-<p id="myParagraph">This is my paragraph </p> 
-<div class="myClass">first div</div>
-<div class="myClass">second div</div>  
+<!-- <p id="myParagraph">This is my paragraph </p>  -->
+<!-- <div class="myClass">first div</div> -->
+<!-- <div class="myClass">second div</div>   -->
 Javascript:
 const allDivs = document.querySelectorAll('.myClass');
 
@@ -39,7 +40,7 @@ const newParagraph = document.createElement('p');
 Then I put some inner text in it.
 newParagraph.innerText = 'This is a paragraph';
 There is a div in HTML:
-<div id="container"></div> 
+<!-- <div id="container"></div>  -->
 
 We took the getElementById of the div into which we will add the tag we created.const container = document.getElementById('container'); 
 Finally, we append our tag to the parent div.
@@ -54,9 +55,9 @@ This process continues until it reaches the top level of the document (e.g. <bod
 <html>
 <head></head>
 <body>
-<div id="grandparent">
-    <div id="parent">
-        <button id="child">This is my button</button>
+<!-- <div id="grandparent"> -->
+    <!-- <div id="parent"> -->
+        <!-- <button id="child">This is my button</button> -->
     </div>
 </div>
 </body>
