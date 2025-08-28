@@ -1,17 +1,12 @@
 1. What is the difference between getElementById, getElementsByClassName, and querySelector / querySelectorAll?
 Ans: getElementById:-  I can work with any of my HTML elements or trigger events on them using a specific ID. 
-Getting an element by ID makes it unique, so this method returns only one element and returns a single element object. We use this when we need a specific element. For example:-
-// HTML: <p id="myParagraph">This is my Paragraph </p> 
+Getting an element by ID makes it unique, so this method returns only one element and returns a single element object. We use this when we need a specific element. For example:- 
 const paragraph = document.getElementById('myParagraph');
 Above I have an HTML p tag, in which I was able to get an ID using document.getElementById
 
 getElementsByClassName:-  This method can retrieve all elements based on a specific class name. It returns an HTML Collection. Although it looks like an array, it is an array like object. 
 In this method, if we add or remove new elements in an HTML, it is automatically updated. We use it when we need all elements of a particular class.
-For example:
- HTML: 
-<!--  <h2 class="heading">This is my heading1</h2>   -->
-<!--  <h3 class="heading">This is my heading2</h3>  -->
-
+For example: 
 const myHeading= document.getElementsByClassName('heading');
 Above I have 2 HTML tags, through which I was able to capture both of them with a single class using document.getElementsBClassName.
 
@@ -24,10 +19,7 @@ querySelectoAll():-  Like querySelector(), it also uses CSS selectors. However, 
 
 If the querySelectorAll has an ID like CSS, it needs to be preceded by a hash tag and if it has a class, it needs to be preceded by a dot.
 
-HTML: 
-<!-- <p id="myParagraph">This is my paragraph </p>  -->
-<!-- <div class="myClass">first div</div> -->
-<!-- <div class="myClass">second div</div>   -->
+ 
 Javascript:
 const allDivs = document.querySelectorAll('.myClass');
 
@@ -40,24 +32,23 @@ const newParagraph = document.createElement('p');
 Then I put some inner text in it.
 newParagraph.innerText = 'This is a paragraph';
 There is a div in HTML:
-<!-- <div id="container"></div>  -->
 
 We took the getElementById of the div into which we will add the tag we created.const container = document.getElementById('container'); 
 Finally, we append our tag to the parent div.
 container.appendChild(newParagraph);
 
-3.What is Event Bubbling and how does it work?
+```3.What is Event Bubbling and how does it work?
 Event Bubbling is a method of event handling in JavaScript, where when an event (such as a click) is triggered, it is first executed on the innermost or child element, Then it slowly spreads upward through its parent elements. This process of rising upward like a bubble is called "bubbling."
 For example:- I have a <p> inside a <div> and a <span> inside that <p>. If I click on the <span> element, the event bubbling will first fire the event handler of the <span> element. Then, The event will go to its parent <p> element and if there is an event handler there, it will be executed. Finally, the event will go to its parent <div> element and if there is a handler there, it will be executed.
 
 This process continues until it reaches the top level of the document (e.g. <body>, <html>). It first captures the target element through event bubbling and then continues upwards through event bubbling. For example:-
 
-<html>
+```<html>
 <head></head>
 <body>
-<!-- <div id="grandparent"> -->
-    <!-- <div id="parent"> -->
-        <!-- <button id="child">This is my button</button> -->
+<div id="grandparent">
+    <div id="parent">
+        <button id="child">This is my button</button>
     </div>
 </div>
 </body>
